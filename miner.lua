@@ -2,8 +2,7 @@
 local ITEMS = {
    DIGITAL_MINER = "mekanism:machineblock",
    QUANTUM_ENTANGLOPORTER = "mekanism:machineblock3",
-   ULTIMATE_LOGISTICAL_CABLE = "mekanism:transmitter",
-   RF_CHARGER = "peripheralsplusone:rf_charger"
+
 }
 
 local miner = peripheral.wrap("top")
@@ -174,33 +173,6 @@ function block_placements()
        turtle.placeUp()
    end
 
-   turtle.turnRight()
-   turtle.forward()
-   turtle.forward()
-   turtle.turnRight()
-   turtle.forward()
-
-   local entangloporter_slot = utils_select_item(ITEMS.QUANTUM_ENTANGLOPORTER)
-   if entangloporter_slot then
-       turtle.place()
-   end
-
-   turtle.down()
-
-   local charger_slot = utils_select_item(ITEMS.RF_CHARGER)
-   if charger_slot then
-       turtle.place()
-   end
-
-   -- Return to starting position
-   turtle.turnRight()
-   turtle.forward()
-   turtle.turnLeft()
-   turtle.forward()
-   turtle.turnRight()
-   turtle.turnRight()
-   print("block_placements completed.")
-end
    
 -- Main Function: Execute all tests in sequence
 function main()
